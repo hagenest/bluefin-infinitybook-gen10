@@ -16,14 +16,13 @@ modules:
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-
-  - type: dnf
-    repos:
-      cleanup: true
-      copr:
-        - kernel-vanilla/stable-rc
-    install:
-      packages:
-        - stablerc-stablerc-releases
+  
+  - type: kargs
+    arch: x86_64
+    kargs:
+      - i8042.reset
+      - i8042.nomux
+      - i8042.nopnp
+      - i8042.noloop
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
