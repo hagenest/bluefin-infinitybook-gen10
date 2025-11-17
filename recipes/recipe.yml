@@ -21,16 +21,16 @@ modules:
       - i8042.nopnp
       - i8042.noloop
 
-  - type: dnf
-    repos:
-      cleanup: true
-      keys:
-        - 0x54840598.pub.asc
-      files:
-        - tuxedo.repo
-    install:
-      packages:
-        - tuxedo-control-center # should include keyboard backlight and function keys
-        # - tuxedo-yt6801 # ethernet driver, requires disabling secure boot :<
+  #  - type: dnf
+  #    repos:
+  #      cleanup: true
+  #      keys:
+  #        - 0x54840598.pub.asc
+  #      files:
+  #        - tuxedo.repo
+  #    install:
+  #      packages:
+  #        - tuxedo-control-center # should include keyboard backlight and function keys
+  #        # - tuxedo-yt6801 # ethernet driver, requires disabling secure boot :<
 
   - type: signing
