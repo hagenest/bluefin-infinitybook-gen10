@@ -29,8 +29,9 @@ modules:
       files:
         - tuxedo.repo
     install:
+      skip-broken: true
       packages:
         - tuxedo-control-center # should include keyboard backlight and function keys
-        # - tuxedo-yt6801 # ethernet driver, requires disabling secure boot :<
+        - tuxedo-yt6801 # ethernet driver, requires disabling secure boot :<
 
   - type: signing
