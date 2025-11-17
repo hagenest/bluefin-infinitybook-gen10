@@ -1,22 +1,18 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
 name: bluefin-infinitybook-gen10
-# description will be included in the image's metadata
+
 description: ublue/bluefin for the tuxedo infinitybook pro 14 gen 10
 
-# the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/bluefin
-image-version: latest # latest is also supported if you want new updates ASAP
+image-version: latest
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
   - type: files
     files:
-      - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-  
+      - source: system # default, not used atm
+        destination: /
+
   - type: kargs
     arch: x86_64
     kargs:
@@ -25,4 +21,16 @@ modules:
       - i8042.nopnp
       - i8042.noloop
 
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  - type: dnf
+    repos:
+      cleanup: true
+      keys:
+        - 0x54840598.pub.asc
+      files:
+        - tuxedo.repo
+    install:
+      packages:
+        - tuxedo-control-center # should include keyboard backlight and function keys
+        - tuxedo-yt6801 # ethernet driver, requires disabling secure boot :<
+
+  - type: signing
