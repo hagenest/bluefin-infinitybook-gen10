@@ -24,6 +24,6 @@ modules:
         - kernel-vanilla/stable-rc
     install:
       packages:
-        - kernel*
+        - stablerc-stablerc-releases
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
