@@ -33,6 +33,7 @@ modules:
     install:
       packages:
        - tuxedo-drivers-kmod
-       - tuxedo-rs
+       - tailord
+       - tailor-gui
 
   - type: signing
