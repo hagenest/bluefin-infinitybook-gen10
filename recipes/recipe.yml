@@ -26,10 +26,13 @@ modules:
       copr:
         - name: gladion136/tuxedo-drivers-kmod
           chroot: fedora-43-x86_64
+        - name: atul977/tuxedo-rs 
+          chroot: fedora-43-x86_64
 
 
     install:
       packages:
        - tuxedo-drivers-kmod
+       - tuxedo-rs
 
   - type: signing
