@@ -37,5 +37,6 @@ modules:
        - tuxedo-drivers-kmod
        - tailord
        - tailor-gui
+       - OpenLinkHub
 
   - type: signing
