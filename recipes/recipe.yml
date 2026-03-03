@@ -28,6 +28,8 @@ modules:
           chroot: fedora-43-x86_64
         - name: atul977/tuxedo-rs 
           chroot: fedora-43-x86_64
+        - name: jurkovic-nikola/OpenLinkHub
+          chroot: OpenLinkHub
 
 
     install:
