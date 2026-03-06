@@ -4,8 +4,8 @@ name: bluefin-infinitybook-gen10
 
 description: ublue/bluefin for the tuxedo infinitybook pro 14 gen 10
 
-base-image: ghcr.io/ublue-os/bluefin-dx
-image-version: latest
+base-image: ghcr.io/ublue-os/bazzite-dx-gnome
+image-version: stable
 
 modules:
   - type: files
@@ -28,8 +28,6 @@ modules:
           chroot: fedora-43-x86_64
         - name: atul977/tuxedo-rs 
           chroot: fedora-43-x86_64
-        - name: jurkovic-nikola/OpenLinkHub
-          chroot: fedora-43-x86_64
 
 
     install:
@@ -37,6 +35,5 @@ modules:
        - tuxedo-drivers-kmod
        - tailord
        - tailor-gui
-       - OpenLinkHub
 
   - type: signing
